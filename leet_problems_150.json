@@ -2,96 +2,516 @@
   {
     "id": "P0001",
     "title": "Two Sum",
-    "description": "Given an array of integers nums and an integer target, return the indices of the two numbers that add up to target.\n\nYou may assume each input would have exactly one solution, and you may not use the same element twice.\n\nReturn the answer in any order.",
-    "explanation": "Use a hashmap to store numbers and their indices while iterating. For each number, check if target - nums[i] already exists in hashmap.",
+    "description": "Given an array of integers nums and an integer target, return the indices of the two numbers such that they add up to the target. Each input has exactly one solution, and the same element cannot be used twice.",
     "difficulty": "Easy",
-    "tags": ["Array", "Hashmap"],
-    "signature": {
-      "javascript": "function solve(nums, target) {\n  // write your code here\n}",
-      "python": "def solve(nums, target):\n    # write your code here\n    pass",
-      "cpp": "vector<int> solve(vector<int>& nums, int target) {\n    // write your code here\n}",
-      "java": "class Solution {\n  public int[] solve(int[] nums, int target) {\n    // write your code here\n  }\n}"
-    },
+    "tags": ["Array", "Hash Map"],
     "testcases": [
-      { "input": { "nums": [2, 7, 11, 15], "target": 9 }, "output": [0, 1] },
-      { "input": { "nums": [3, 2, 4], "target": 6 }, "output": [1, 2] },
-      { "input": { "nums": [3, 3], "target": 6 }, "output": [0, 1] }
+      { "input": { "nums": [2,7,11,15], "target": 9 }, "output": [0,1] },
+      { "input": { "nums": [3,2,4], "target": 6 }, "output": [1,2] }
     ]
   },
-
   {
     "id": "P0002",
     "title": "Palindrome Number",
-    "description": "Given an integer x, return true if x is a palindrome, otherwise false.\n\nA palindrome is a number that reads the same backward as forward.",
-    "explanation": "Convert to string, or reverse the number mathematically without converting.",
+    "description": "Given an integer x, return true if x is a palindrome. An integer is a palindrome when it reads the same backward as forward.",
     "difficulty": "Easy",
     "tags": ["Math"],
-    "signature": {
-      "javascript": "function solve(x) {\n  // write your code here\n}",
-      "python": "def solve(x):\n    # write code here\n    pass",
-      "cpp": "bool solve(int x) {\n    // write your code here\n}",
-      "java": "class Solution {\n  public boolean solve(int x) {\n    // write your code here\n  }\n}"
-    },
     "testcases": [
       { "input": { "x": 121 }, "output": true },
-      { "input": { "x": -121 }, "output": false },
-      { "input": { "x": 10 }, "output": false }
+      { "input": { "x": -121 }, "output": false }
     ]
   },
-
   {
     "id": "P0003",
-    "title": "Remove Duplicates from Sorted Array",
-    "description": "Given a sorted array nums, remove duplicates in-place so that each unique element appears only once.\nReturn the number of unique elements.\n\nModify the input array in-place and return the new length.",
-    "explanation": "Use two pointers. One pointer iterates; the other writes unique elements.",
-    "difficulty": "Easy",
-    "tags": ["Array", "Two Pointers"],
-    "signature": {
-      "javascript": "function solve(nums) {\n  // write your code here\n}",
-      "python": "def solve(nums):\n    # write code here\n    pass",
-      "cpp": "int solve(vector<int>& nums) {\n    // write your code here\n}",
-      "java": "class Solution {\n  public int solve(int[] nums) {\n    // write your code here\n  }\n}"
-    },
+    "title": "Reverse Integer",
+    "description": "Given a signed 32-bit integer x, return x with its digits reversed. If reversing x causes overflow, return 0.",
+    "difficulty": "Medium",
+    "tags": ["Math"],
     "testcases": [
-      { "input": { "nums": [1, 1, 2] }, "output": 2 },
-      { "input": { "nums": [0,0,1,1,1,2,2,3,3,4] }, "output": 5 }
+      { "input": { "x": 123 }, "output": 321 },
+      { "input": { "x": -123 }, "output": -321 }
     ]
   },
-
   {
     "id": "P0004",
-    "title": "Merge Two Sorted Lists",
-    "description": "You are given the heads of two sorted linked lists. Merge the two lists into one sorted list and return the head.",
-    "explanation": "Use two pointers to merge nodes one by one.",
-    "difficulty": "Medium",
-    "tags": ["Linked List"],
-    "signature": {
-      "javascript": "function solve(list1, list2) {\n  // Linked list problem\n}",
-      "python": "def solve(list1, list2):\n    # write code here\n    pass",
-      "cpp": "ListNode* solve(ListNode* list1, ListNode* list2) {\n    // write code here\n}",
-      "java": "class Solution {\n  public ListNode solve(ListNode list1, ListNode list2) {\n    // write code here\n  }\n}"
-    },
+    "title": "Valid Parentheses",
+    "description": "Given a string containing parentheses characters '()', '{}', and '[]', determine if the input string is valid.",
+    "difficulty": "Easy",
+    "tags": ["Stack", "String"],
     "testcases": [
-      { "input": { "list1": [1,2,4], "list2": [1,3,4] }, "output": [1,1,2,3,4,4] }
+      { "input": { "s": \"()\" }, "output": true },
+      { "input": { "s": \"(]\" }, "output": false }
+    ]
+  },
+  {
+    "id": "P0005",
+    "title": "Merge Two Sorted Arrays",
+    "description": "Given two sorted arrays, merge them into a single sorted array.",
+    "difficulty": "Easy",
+    "tags": ["Array", "Two Pointers"],
+    "testcases": [
+      { "input": { "a": [1,2,3], "b": [2,5,6] }, "output": [1,2,2,3,5,6] }
+    ]
+  },
+  {
+    "id": "P0006",
+    "title": "Remove Duplicates from Sorted Array",
+    "description": "Given a sorted array, remove the duplicates in-place such that each element appears only once and return the new length.",
+    "difficulty": "Easy",
+    "tags": ["Array", "Two Pointers"],
+    "testcases": [
+      { "input": { "nums": [1,1,2] }, "output": 2 },
+      { "input": { "nums": [0,0,1,1,2] }, "output": 3 }
+    ]
+  },
+  {
+    "id": "P0007",
+    "title": "Maximum Subarray",
+    "description": "Given an integer array nums, find the contiguous subarray with the largest sum and return its sum.",
+    "difficulty": "Medium",
+    "tags": ["Array", "Dynamic Programming"],
+    "testcases": [
+      { "input": { "nums": [-2,1,-3,4,-1,2,1,-5,4] }, "output": 6 }
+    ]
+  },
+  {
+    "id": "P0008",
+    "title": "Climbing Stairs",
+    "description": "You are climbing a staircase with n steps. Each time you can climb 1 or 2 steps. Return the number of distinct ways to reach the top.",
+    "difficulty": "Easy",
+    "tags": ["Dynamic Programming"],
+    "testcases": [
+      { "input": { "n": 2 }, "output": 2 },
+      { "input": { "n": 3 }, "output": 3 }
+    ]
+  },
+  {
+    "id": "P0009",
+    "title": "Binary Search",
+    "description": "Given a sorted array and a target value, return the index if the target is found, otherwise return -1.",
+    "difficulty": "Easy",
+    "tags": ["Array", "Binary Search"],
+    "testcases": [
+      { "input": { "nums": [-1,0,3,5,9,12], "target": 9 }, "output": 4 }
+    ]
+  },
+  {
+    "id": "P0010",
+    "title": "Move Zeroes",
+    "description": "Given an integer array, move all zeros to the end while maintaining the relative order of non-zero elements.",
+    "difficulty": "Easy",
+    "tags": ["Array", "Two Pointers"],
+    "testcases": [
+      { "input": { "nums": [0,1,0,3,12] }, "output": [1,3,12,0,0] }
     ]
   },
 
   {
-    "id": "P0005",
-    "title": "Best Time to Buy and Sell Stock",
-    "description": "Given an array prices where prices[i] is the price of a stock on day i, return the maximum profit.\n\nYou must buy before you sell.",
-    "explanation": "Track minimum price; compute max profit with single pass.",
+    "id": "P0011",
+    "title": "Single Number",
+    "description": "Given a non-empty array of integers, every element appears twice except for one. Find that single one.",
     "difficulty": "Easy",
-    "tags": ["Array", "Greedy"],
-    "signature": {
-      "javascript": "function solve(prices) {\n  // write code here\n}",
-      "python": "def solve(prices):\n    # write code here\n    pass",
-      "cpp": "int solve(vector<int>& prices) {\n    // write code here\n}",
-      "java": "class Solution {\n  public int solve(int[] prices) {\n    // write code here\n  }\n}"
-    },
+    "tags": ["Bit Manipulation"],
     "testcases": [
-      { "input": { "prices": [7,1,5,3,6,4] }, "output": 5 },
-      { "input": { "prices": [7,6,4,3,1] }, "output": 0 }
+      { "input": { "nums": [2,2,1] }, "output": 1 }
+    ]
+  },
+  {
+    "id": "P0012",
+    "title": "Intersection of Two Arrays",
+    "description": "Given two integer arrays, return their intersection. Each element in the result must be unique.",
+    "difficulty": "Easy",
+    "tags": ["Array", "Hash Set"],
+    "testcases": [
+      { "input": { "nums1": [1,2,2,1], "nums2": [2,2] }, "output": [2] }
+    ]
+  },
+  {
+    "id": "P0013",
+    "title": "Fizz Buzz",
+    "description": "Given an integer n, return a string array answer from 1 to n following FizzBuzz rules.",
+    "difficulty": "Easy",
+    "tags": ["Simulation"],
+    "testcases": [
+      { "input": { "n": 5 }, "output": ["1","2","Fizz","4","Buzz"] }
+    ]
+  },
+  {
+    "id": "P0014",
+    "title": "Longest Common Prefix",
+    "description": "Write a function to find the longest common prefix string among an array of strings.",
+    "difficulty": "Easy",
+    "tags": ["String"],
+    "testcases": [
+      { "input": { "strs": ["flower","flow","flight"] }, "output": "fl" }
+    ]
+  },
+  {
+    "id": "P0015",
+    "title": "Valid Anagram",
+    "description": "Given two strings s and t, return true if t is an anagram of s.",
+    "difficulty": "Easy",
+    "tags": ["String", "Hash Map"],
+    "testcases": [
+      { "input": { "s": "anagram", "t": "nagaram" }, "output": true }
+    ]
+  },
+
+  {
+    "id": "P0016",
+    "title": "Contains Duplicate",
+    "description": "Given an integer array, return true if any value appears at least twice.",
+    "difficulty": "Easy",
+    "tags": ["Array", "Hash Set"],
+    "testcases": [
+      { "input": { "nums": [1,2,3,1] }, "output": true }
+    ]
+  },
+  {
+    "id": "P0017",
+    "title": "Power of Two",
+    "description": "Given an integer n, return true if it is a power of two.",
+    "difficulty": "Easy",
+    "tags": ["Math", "Bit Manipulation"],
+    "testcases": [
+      { "input": { "n": 16 }, "output": true },
+      { "input": { "n": 18 }, "output": false }
+    ]
+  },
+  {
+    "id": "P0018",
+    "title": "Reverse String",
+    "description": "Write a function that reverses a string. The input string is given as an array of characters.",
+    "difficulty": "Easy",
+    "tags": ["String", "Two Pointers"],
+    "testcases": [
+      { "input": { "s": ["h","e","l","l","o"] }, "output": ["o","l","l","e","h"] }
+    ]
+  },
+  {
+    "id": "P0019",
+    "title": "Majority Element",
+    "description": "Given an array, find the element that appears more than n/2 times.",
+    "difficulty": "Easy",
+    "tags": ["Array"],
+    "testcases": [
+      { "input": { "nums": [3,2,3] }, "output": 3 }
+    ]
+  },
+  {
+    "id": "P0020",
+    "title": "Add Binary",
+    "description": "Given two binary strings, return their sum as a binary string.",
+    "difficulty": "Easy",
+    "tags": ["String", "Math"],
+    "testcases": [
+      { "input": { "a": "11", "b": "1" }, "output": "100" }
+    ]
+  },
+
+  {
+    "id": "P0021",
+    "title": "Sqrt(x)",
+    "description": "Given a non-negative integer x, compute and return the square root of x rounded down.",
+    "difficulty": "Easy",
+    "tags": ["Math", "Binary Search"],
+    "testcases": [
+      { "input": { "x": 8 }, "output": 2 }
+    ]
+  },
+  {
+    "id": "P0022",
+    "title": "Merge Intervals",
+    "description": "Given an array of intervals, merge all overlapping intervals.",
+    "difficulty": "Medium",
+    "tags": ["Array", "Sorting"],
+    "testcases": [
+      { "input": { "intervals": [[1,3],[2,6],[8,10]] }, "output": [[1,6],[8,10]] }
+    ]
+  },
+  {
+    "id": "P0023",
+    "title": "Rotate Array",
+    "description": "Given an array, rotate the array to the right by k steps.",
+    "difficulty": "Medium",
+    "tags": ["Array"],
+    "testcases": [
+      { "input": { "nums": [1,2,3,4,5,6,7], "k": 3 }, "output": [5,6,7,1,2,3,4] }
+    ]
+  },
+  {
+    "id": "P0024",
+    "title": "Product of Array Except Self",
+    "description": "Given an integer array nums, return an array where each element is the product of all other elements.",
+    "difficulty": "Medium",
+    "tags": ["Array"],
+    "testcases": [
+      { "input": { "nums": [1,2,3,4] }, "output": [24,12,8,6] }
+    ]
+  },
+  {
+    "id": "P0025",
+    "title": "Set Matrix Zeroes",
+    "description": "Given a matrix, if an element is 0, set its entire row and column to 0.",
+    "difficulty": "Medium",
+    "tags": ["Matrix"],
+    "testcases": [
+      { "input": { "matrix": [[1,1,1],[1,0,1],[1,1,1]] }, "output": [[1,0,1],[0,0,0],[1,0,1]] }
+    ]
+  },
+
+  {
+    "id": "P0026",
+    "title": "Spiral Matrix",
+    "description": "Given a matrix, return all elements of the matrix in spiral order.",
+    "difficulty": "Medium",
+    "tags": ["Matrix"],
+    "testcases": [
+      { "input": { "matrix": [[1,2,3],[4,5,6],[7,8,9]] }, "output": [1,2,3,6,9,8,7,4,5] }
+    ]
+  },
+  {
+    "id": "P0027",
+    "title": "Group Anagrams",
+    "description": "Given an array of strings, group the anagrams together.",
+    "difficulty": "Medium",
+    "tags": ["String", "Hash Map"],
+    "testcases": [
+      { "input": { "strs": ["eat","tea","tan","ate","nat","bat"] }, "output": [["eat","tea","ate"],["tan","nat"],["bat"]] }
+    ]
+  },
+  {
+    "id": "P0028",
+    "title": "Longest Substring Without Repeating Characters",
+    "description": "Given a string, find the length of the longest substring without repeating characters.",
+    "difficulty": "Medium",
+    "tags": ["String", "Sliding Window"],
+    "testcases": [
+      { "input": { "s": "abcabcbb" }, "output": 3 }
+    ]
+  },
+  {
+    "id": "P0029",
+    "title": "Container With Most Water",
+    "description": "Given an array of heights, find two lines that together with the x-axis form a container that holds the most water.",
+    "difficulty": "Medium",
+    "tags": ["Array", "Two Pointers"],
+    "testcases": [
+      { "input": { "height": [1,8,6,2,5,4,8,3,7] }, "output": 49 }
+    ]
+  },
+  {
+    "id": "P0030",
+    "title": "Word Search",
+    "description": "Given a 2D board and a word, check if the word exists in the grid.",
+    "difficulty": "Medium",
+    "tags": ["Backtracking"],
+    "testcases": [
+      { "input": { "board": [["A","B","C"],["D","E","F"]], "word": "ABE" }, "output": true }
+    ]
+  },
+
+  {
+    "id": "P0031",
+    "title": "Number of Islands",
+    "description": "Given a 2D grid of '1's and '0's, count the number of islands.",
+    "difficulty": "Medium",
+    "tags": ["DFS", "BFS"],
+    "testcases": [
+      { "input": { "grid": [["1","1","0"],["1","0","0"],["0","0","1"]] }, "output": 2 }
+    ]
+  },
+  {
+    "id": "P0032",
+    "title": "Course Schedule",
+    "description": "Given the number of courses and prerequisites, determine if all courses can be finished.",
+    "difficulty": "Medium",
+    "tags": ["Graph", "Topological Sort"],
+    "testcases": [
+      { "input": { "numCourses": 2, "prerequisites": [[1,0]] }, "output": true }
+    ]
+  },
+  {
+    "id": "P0033",
+    "title": "LRU Cache",
+    "description": "Design a data structure that follows the constraints of a Least Recently Used cache.",
+    "difficulty": "Hard",
+    "tags": ["Design", "Hash Map"],
+    "testcases": [
+      { "input": { "operations": ["put","get"], "values": [[1,1],[1]] }, "output": [null,1] }
+    ]
+  },
+  {
+    "id": "P0034",
+    "title": "Median of Two Sorted Arrays",
+    "description": "Given two sorted arrays, find the median of the two arrays.",
+    "difficulty": "Hard",
+    "tags": ["Array", "Binary Search"],
+    "testcases": [
+      { "input": { "nums1": [1,3], "nums2": [2] }, "output": 2.0 }
+    ]
+  },
+  {
+    "id": "P0035",
+    "title": "Trapping Rain Water",
+    "description": "Given an array representing elevation map, compute how much water it can trap.",
+    "difficulty": "Hard",
+    "tags": ["Array", "Two Pointers"],
+    "testcases": [
+      { "input": { "height": [0,1,0,2,1,0,1,3] }, "output": 6 }
+    ]
+  },
+
+  {
+    "id": "P0036",
+    "title": "N-Queens",
+    "description": "Given an integer n, return all distinct solutions to the n-queens puzzle.",
+    "difficulty": "Hard",
+    "tags": ["Backtracking"],
+    "testcases": [
+      { "input": { "n": 4 }, "output": 2 }
+    ]
+  },
+  {
+    "id": "P0037",
+    "title": "Word Ladder",
+    "description": "Given two words and a dictionary, find the length of the shortest transformation sequence.",
+    "difficulty": "Hard",
+    "tags": ["BFS"],
+    "testcases": [
+      { "input": { "beginWord": "hit", "endWord": "cog" }, "output": 5 }
+    ]
+  },
+  {
+    "id": "P0038",
+    "title": "Merge K Sorted Lists",
+    "description": "Merge k sorted linked lists into one sorted linked list.",
+    "difficulty": "Hard",
+    "tags": ["Heap", "Linked List"],
+    "testcases": [
+      { "input": { "lists": [[1,4,5],[1,3,4],[2,6]] }, "output": [1,1,2,3,4,4,5,6] }
+    ]
+  },
+  {
+    "id": "P0039",
+    "title": "Edit Distance",
+    "description": "Given two strings, find the minimum number of operations required to convert one string into the other.",
+    "difficulty": "Hard",
+    "tags": ["Dynamic Programming"],
+    "testcases": [
+      { "input": { "word1": "horse", "word2": "ros" }, "output": 3 }
+    ]
+  },
+  {
+    "id": "P0040",
+    "title": "Maximum Product Subarray",
+    "description": "Given an integer array, find the contiguous subarray with the largest product.",
+    "difficulty": "Medium",
+    "tags": ["Array", "Dynamic Programming"],
+    "testcases": [
+      { "input": { "nums": [2,3,-2,4] }, "output": 6 }
+    ]
+  },
+
+  {
+    "id": "P0041",
+    "title": "House Robber",
+    "description": "Given an array representing money in houses, determine the maximum amount you can rob without robbing adjacent houses.",
+    "difficulty": "Medium",
+    "tags": ["Dynamic Programming"],
+    "testcases": [
+      { "input": { "nums": [1,2,3,1] }, "output": 4 }
+    ]
+  },
+  {
+    "id": "P0042",
+    "title": "Decode Ways",
+    "description": "Given a string containing digits, determine the total number of ways to decode it.",
+    "difficulty": "Medium",
+    "tags": ["Dynamic Programming"],
+    "testcases": [
+      { "input": { "s": "226" }, "output": 3 }
+    ]
+  },
+  {
+    "id": "P0043",
+    "title": "Search in Rotated Sorted Array",
+    "description": "Search for a target value in a rotated sorted array.",
+    "difficulty": "Medium",
+    "tags": ["Array", "Binary Search"],
+    "testcases": [
+      { "input": { "nums": [4,5,6,7,0,1,2], "target": 0 }, "output": 4 }
+    ]
+  },
+  {
+    "id": "P0044",
+    "title": "Combination Sum",
+    "description": "Given an array of distinct integers and a target, return all unique combinations where numbers sum to target.",
+    "difficulty": "Medium",
+    "tags": ["Backtracking"],
+    "testcases": [
+      { "input": { "candidates": [2,3,6,7], "target": 7 }, "output": [[2,2,3],[7]] }
+    ]
+  },
+  {
+    "id": "P0045",
+    "title": "Jump Game",
+    "description": "Given an array where each element represents max jump length, determine if you can reach the last index.",
+    "difficulty": "Medium",
+    "tags": ["Greedy"],
+    "testcases": [
+      { "input": { "nums": [2,3,1,1,4] }, "output": true }
+    ]
+  },
+
+  {
+    "id": "P0046",
+    "title": "Permutations",
+    "description": "Given an array of distinct integers, return all possible permutations.",
+    "difficulty": "Medium",
+    "tags": ["Backtracking"],
+    "testcases": [
+      { "input": { "nums": [1,2,3] }, "output": 6 }
+    ]
+  },
+  {
+    "id": "P0047",
+    "title": "Subsets",
+    "description": "Given an integer array, return all possible subsets.",
+    "difficulty": "Medium",
+    "tags": ["Backtracking"],
+    "testcases": [
+      { "input": { "nums": [1,2] }, "output": [[],[1],[2],[1,2]] }
+    ]
+  },
+  {
+    "id": "P0048",
+    "title": "Daily Temperatures",
+    "description": "Given an array of daily temperatures, return an array that shows how many days to wait for a warmer temperature.",
+    "difficulty": "Medium",
+    "tags": ["Stack"],
+    "testcases": [
+      { "input": { "temperatures": [73,74,75,71,69,72,76,73] }, "output": [1,1,4,2,1,1,0,0] }
+    ]
+  },
+  {
+    "id": "P0049",
+    "title": "Kth Largest Element in an Array",
+    "description": "Given an integer array and an integer k, return the kth largest element.",
+    "difficulty": "Medium",
+    "tags": ["Heap"],
+    "testcases": [
+      { "input": { "nums": [3,2,1,5,6,4], "k": 2 }, "output": 5 }
+    ]
+  },
+  {
+    "id": "P0050",
+    "title": "Longest Increasing Subsequence",
+    "description": "Given an integer array, find the length of the longest increasing subsequence.",
+    "difficulty": "Medium",
+    "tags": ["Dynamic Programming"],
+    "testcases": [
+      { "input": { "nums": [10,9,2,5,3,7,101,18] }, "output": 4 }
     ]
   }
 ]
